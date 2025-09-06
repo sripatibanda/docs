@@ -1,51 +1,51 @@
 {
-  "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
-  "name": "BigDipperOptions Docs",
-  "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
-  },
-  "favicon": "/favicon.svg",
-  "navigation": {
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+    "$schema": "https://mintlify.com/docs.json",
+    "theme": "mint",
+    "name": "BigDipperOptions Docs",
+    "colors": {
+        "primary": "#16A34A",
+        "light": "#07C983",
+        "dark": "#15803D"
+    },
+    "favicon": "/favicon.svg",
+    "navigation": {
+        "global": {
+            "anchors": [
+                {
+                    "anchor": "Documentation",
+                    "href": "https://mintlify.com/docs",
+                    "icon": "book-open-cover"
+                }
+            ]
         }
-      ]
+    },
+    "logo": {
+        "light": "/logo/light.svg",
+        "dark": "/logo/dark.svg"
+    },
+    "navbar": {
+        "links": [
+            {
+                "label": "Support",
+                "href": "mailto:bigdipperoptions@gmail.com"
+            }
+        ],
+        "primary": {
+            "type": "button",
+            "label": "Dashboard",
+            "href": "https://dashboard.mintlify.com"
+        }
+    },
+    "contextual": {
+        "options": [
+            "copy",
+            "view",
+            "chatgpt",
+            "claude",
+            "perplexity",
+            "mcp",
+            "cursor",
+            "vscode"
+        ]
     }
-  },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
-  },
-  "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:bigdipperoptions@gmail.com"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
-    }
-  },
-  "contextual": {
-    "options": [
-      "copy",
-      "view",
-      "chatgpt",
-      "claude",
-      "perplexity",
-      "mcp",
-      "cursor",
-      "vscode"
-    ]
-  }
 }
