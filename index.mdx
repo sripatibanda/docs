@@ -8,10 +8,6 @@ title: "Introduction"
 
 The platform is built to fill a gap for traders who already possess an understanding of options but require **deeper, structured insights delivered** **through a modern, clean, and responsive interface**. It is **not** a beginner-focused options platform and does not provide basic educational resources or trading advice. \*\*BigDipperOptions \*\*aims to be a valuable partner in your trading journey, providing the clarity and structure needed to build a consistent, rational process
 
-<Card title="Start here" icon="rocket" horizontal href="/quickstart">
-  Follow our three step quickstart guide.
-</Card>
-
 ## **🎯 What Are Options?**
 
 Now imagine people in this market start placing **bets** on where prices will go. These bets are:
@@ -21,24 +17,63 @@ Now imagine people in this market start placing **bets** on where prices will go
 
 Most of these bets are sold by market makers, who then must **hedge** — adjust their own positions to avoid losing money as the stock price moves.
 
-<Columns cols={2}>
-  <Card title="Edit locally" icon="pen-to-square" href="/development">
-    Edit your docs locally and preview them in real time.
-  </Card>
-  <Card title="Customize your site" icon="palette" href="/essentials/settings">
-    Customize the design and colors of your site to match your brand.
-  </Card>
-</Columns>
+## **📈 What's Gamma?**
 
-## Create beautiful pages
+**Gamma** measures how sensitive an option’s delta is to price changes.
 
-Everything you need to create world-class documentation.
+- High gamma = very sensitive = market makers need to adjust more often
+- Low gamma = less sensitive = fewer adjustments
 
-<Columns cols={2}>
-  <Card title="Write with MDX" icon="pen-fancy" href="/essentials/markdown">
-    Use MDX to style your docs pages.
-  </Card>
-  <Card title="Code samples" icon="code" href="/essentials/code">
-    Add sample code to demonstrate how to use your product.
-  </Card>
-</Columns>
+Imagine trying to walk a tightrope in the wind — strong gusts (high gamma) make you work harder to stay balanced.
+
+## **🌪️ What is GEX (Gamma Exposure)?**
+
+**GEX** is the total “wind” in the market from all the options bets. It tells us:
+
+> How much market makers will **buy or sell the underlying stock** to stay hedged as prices change.
+
+- **Positive GEX** = market makers hedge **against** price moves (selling rallies, buying dips). This **dampens volatility**.
+- **Negative GEX** = market makers hedge **with** price moves (buying rallies, selling dips). This **amplifies volatility**.
+
+## **💡 Why Is GEX-Based Trading a Viable Strategy?**
+
+GEX provides a **unique edge** because:
+
+1. **Market Maker Flow is Predictable (BigDipper)**\
+   Market makers follow strict hedging rules. When GEX is extreme, we can **anticipate** how they will act.
+2. **Price Behavior Aligns with GEX Zones (BigDipper)**\
+   Stocks often **gravitate toward high GEX levels** or **explode away from negative GEX zones**. This gives traders high-probability setups.
+3. **GEX Reflects Market Sentiment Shifts (BigDipper)**\
+   Watching GEX changes over time reveals when the market is becoming **fragile or resilient**, helping traders time entries/exits.
+4. **Works Across Timeframes (Charts required - In progress )**\
+   GEX insights can be used:
+   - **Intraday** for volatility fading or breakout trades
+   - **Swing trades** ahead of expiry cycles
+   - **Macro analysis** of index positioning (e.g., SPX GEX)
+
+## **🛠 Real-Life Analogy**
+
+> GEX is like gravity on a marble board.
+
+- **Positive GEX**: The board is flat with soft edges — marbles roll toward the center.
+- **Negative GEX**: The board is tilted — marbles accelerate as they move away.
+
+## **✅ Summary**
+
+| **Concept**  | **Meaning**                                      |
+| :----------- | :----------------------------------------------- |
+| Options      | Bets on price direction                          |
+| Gamma        | How fast those bets change with price            |
+| GEX          | Net effect of all gamma in the market            |
+| High GEX     | Stable market; hedging dampens moves             |
+| Negative GEX | Volatile market; hedging accelerates moves       |
+| GEX Trading  | Predicts market flows; supports directional bias |
+
+## **📊 Bottom Line**
+
+Understanding GEX helps traders:
+
+- Anticipate **when** the market may stay calm or break out
+- Spot **key price levels** where market flows shift
+- Position ahead of **volatility events**
+- Align with **institutional hedging behavior**
