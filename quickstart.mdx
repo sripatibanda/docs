@@ -7,4 +7,155 @@ description: "Start building awesome documentation in minutes"
 
 Get your documentation site running locally and make your first customization.
 
-### 
+### _GEX-based strategies are not about predicting price — they’re about anticipating market maker behavior. That makes them powerful in uncertain times._
+
+## **🎯 Why Use GEX-Based Trading?**
+
+GEX-based trading identifies key zones of dealer hedging. These zones often act as **support/resistance** or **price magnets**, influencing stock behavior near expirations. This makes GEX a powerful indicator for timing trades, managing risk, and spotting opportunities.
+
+---
+
+```
+BigDipperOptions Report at 2025-08-05 12:17:39.750637-07:00 for symbols
+ ['AA' 'AAL' 'AAPL' 'ABBV' 'ABNB' 'ACHR' 'AFRM' 'AMAT' 'AMD' 'AMZN' 'AMGN'
+ 'ANET' 'APP' 'ARKK' 'ARM' 'AVGO' 'AXP' 'AZN' 'BA' 'BABA' 'BAC' 'BBY'
+ 'BIDU' 'BITO' 'BMY' 'BP' 'C' 'CAT' 'CCJ' 'CCL' 'CELH' 'CLF' 'CMG' 'COIN'
+ 'COP' 'COST' 'CRM' 'CRWD' 'CSCO' 'CVNA' 'CVS' 'CVX' 'DAL' 'DBX' 'DE'
+ 'DELL' 'DIA' 'DIS' 'DKNG' 'EBAY' 'EEM' 'ENPH' 'ETSY' 'EXPE' 'FCX' 'FDX'
+ 'FSLR' 'FXI' 'GDX' 'GDXJ' 'GE' 'GLD' 'GM' 'GME' 'GOOG' 'GOOGL' 'GS' 'HAL'
+ 'HD' 'HIMS' 'HOOD' 'HUM' 'IBIT' 'IBM' 'IEF' 'INTC' 'IONQ' 'IWM' 'JD'
+ 'JETS' 'JNJ' 'JPM' 'KO' 'LLY' 'LOW' 'LVS' 'MA' 'MBLY' 'MCD' 'MET' 'META'
+ 'MGM' 'MMM' 'MPC' 'MRK' 'MRNA' 'MRVL' 'MS' 'MSFT' 'MSOS' 'MSTR' 'MU'
+ 'NCLH' 'NET' 'NFLX' 'NKE' 'NU' 'NVDA' 'ON' 'ORCL' 'OXY' 'PBR' 'PEP' 'PFE'
+ 'PINS' 'PLTR' 'PM' 'PNC' 'PTON' 'PYPL' 'QCOM' 'QQQ' 'RBLX' 'RDDT' 'RCL'
+ 'ROKU' 'SBUX' 'SCHW' 'SHOP' 'SLV' 'SMCI' 'SMH' 'SNAP' 'SNOW' 'SOXL' 'SPY'
+ 'STX' 'TFC' 'TGT' 'TLT' 'TSM' 'TSLA' 'TTD' 'TXN' 'U' 'UAL' 'UNG' 'UNH'
+ 'UPS' 'UPST' 'USB' 'USO' 'UVXY' 'VALE' 'VRT' 'VST' 'VXX' 'VZ' 'WBA' 'WFC'
+ 'WMT' 'WYNN' 'XLF' 'XLK' 'XLP' 'XLV' 'XLY' 'XOM' 'XPEV' 'XYZ' 'ZETA'
+ 'ADBE' 'ASML' 'DASH' 'EQIX' 'FTNT' 'GILD' 'HON' 'IDXX' 'ISRG' 'KLAC'
+ 'LMT' 'MTCH' 'PDD' 'SAP' 'SPOT' 'UBER' 'VRTX']
+```
+
+```
+/var/folders/l6/fb69m8s153xgw1jc4pkmhdd40000gn/T/ipykernel_98583/2120043995.py:2: DtypeWarning: Columns (13) have mixed types. Specify dtype option on import or set low_memory=False.
+  options_df_com = pd.read_csv(data_file_name)
+```
+
+## **🔹 Graph 1: Strike Price vs Gamma Exposure**
+
+**Purpose**: Identify strike prices where market makers may have the highest hedging sensitivity.
+
+- **X-axis**: Strike Price — the price at which the option can be exercised.
+- **Y-axis**: GEX (Gamma Exposure) — reflects the impact of each strike on dealer hedging activity.
+- **Facet**: Separates Call and Put options.
+- **Vertical line**: Represents the current stock price (spot price).
+
+**How to interpret**:
+
+- Peaks in GEX suggest high hedging activity.
+- High GEX at or near the spot price can indicate potential price "magnet" zones.
+- 
+
+  ![Graph1 Pn](/images/graph1.png)
+
+---
+
+## **🔹 Graph 2: Moneyness vs Gamma Exposure**
+
+**Purpose**: Show how far an option is from the current price and its gamma exposure.
+
+- **X-axis**: Moneyness = (Strike / Spot Price) - 1
+  - 0 means the strike is at-the-money (ATM)
+  - Positive = Out-of-the-money for calls
+  - Negative = In-the-money for calls (and reversed for puts)
+- **Y-axis**: GEX
+- **Facet**: Call and Put options separated
+- **Vertical line**: At moneyness = 0 (ATM)
+
+**How to interpret**:
+
+- High GEX near moneyness 0 = market is sensitive to small price moves.
+- GEX far from ATM shows deep OTM or ITM strikes affecting dealer exposure.
+
+![Graph2 Pn](/images/graph2.png)
+
+---
+
+## **🔹 Graph 3: Top Option Spread Candidates by Score**
+
+**Purpose**: Highlight top-scoring options for potential spreads.
+
+- **X-axis**: Strike Price
+- **Y-axis**: Composite Score — an algorithmic measure combining factors like volume, spread, GEX, delta, etc.
+- **Facet**: Call and Put options separated
+- **Color**: Represents different stock symbols
+
+**How to interpret**:
+
+- Higher scores indicate more favorable or active option setups.
+- Use this to identify opportunities in high-scoring strikes for each stock.
+
+![Graph3 Pn](/images/graph3.png)
+
+---
+
+## **📘 Glossary**
+
+- **Strike Price**: Set price for buying/selling the underlying stock.
+- **Spot Price**: Current trading price of the stock.
+- **GEX (Gamma Exposure)**: Indicates how much market makers need to adjust their positions based on option movement.
+- **Moneyness**: Describes how far an option is from being profitable at current prices.
+- **Call Option**: Bet on the stock going up.
+- **Put Option**: Bet on the stock going down.
+
+---
+
+# **📊 Risk vs Reward: Expected PnL from Option Spread Candidates**
+
+This plot visualizes potential trades by comparing **expected returns** versus **risk exposure** for each option spread. It helps traders evaluate which opportunities offer the most favorable reward-to-risk profiles.
+
+---
+
+## **🔍 Key Definitions**
+
+- **Expected PnL**: Approximated as the product of Gamma Exposure (GEX) and last option price. This gives a proxy for how profitable a trade might be if GEX plays out.
+- **Capital at Risk (wth)**: A measure of how much capital is exposed in the trade (e.g., max loss or cost basis).
+
+---
+
+## **📈 Graph Overview**
+
+- **X-axis**: Capital at Risk (`wth`) — how much money is needed or potentially at stake.
+- **Y-axis**: Expected PnL — the estimated reward of the trade.
+- **Color**: Option type (`call` in blue, `put` in red).
+- **Hover Info**: Shows symbol, strike, expiry, and time to maturity for each candidate.
+
+Two reference lines are drawn:
+
+- **Horizontal Line at Y=0**: Separates profitable (above line) vs. unprofitable (below line) expected outcomes.
+- **Vertical Line at X=0**: Helps visualize negative vs. positive capital risk (though negative risk is rare or invalid in practice).
+
+---
+
+## **🧠 How to Use This Plot**
+
+- Points in the **top-left** quadrant: High reward, low risk — ideal trades.
+- Points in the **top-right** quadrant: Higher reward but also higher risk — possible depending on risk appetite.
+- Points **below the horizontal line**: Negative expected value — typically avoid.
+- Use this view to **rank opportunities** by both potential profit and required capital exposure.
+
+---
+
+## **✅ Why This Matters**
+
+This visualization supports GEX-based strategies by grounding them in **risk/reward logic**, helping you filter for trades with both gamma tailwinds and attractive financial setup. It enables you to:
+
+- Compare spreads across different tickers and strikes.
+- Prioritize trades with better efficiency (more return per unit of risk).
+- Spot outliers where GEX is high but capital risk is manageable.
+
+---
+
+# **📘 Understanding Bull Call and Bull Put Spreads**
+
+Options spreads are popular strategies that limit both risk and reward. This notebook explains **Bull Call Spreads** and **Bull Put Spreads**, using output from the `spread_df` DataFrame generated by the
