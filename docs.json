@@ -17,9 +17,7 @@
                         "group": "Getting started",
                         "pages": [
                             "index",
-                            "Why Use GEX-Based Trading?",
-                            "quickstart",
-                            "Development list"
+                            "quickstart"                            
                         ]
                     },
                     {
